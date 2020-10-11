@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} HOME - {% endblock %}
+{% block content %}
+    <p>Hello, index.html here!</p>
+
+    <p>{{ some_text }}</p>
+    <p>Aktuelles Jahr {{ aktuelles_jahr }}</p>
+
+
+<br>
+<br>
+
+<div class="d-flex flex-column">
+{% for country in countries %}
+    <div class="p-1">{{country}}</div>
+{% endfor  %}
+</div>
+
+<br>
+<br>
+{% if countries %}
+<p>Die Ländervariable existiert!</p>
+{% else %}
+<p>Hier sind keine Länder</p>
+{% endif %}
+
+{% endblock content %}
