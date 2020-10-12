@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    some_text = "WILLKOMMEN!"
-    aktuelles_jahr = datetime.datetime.now().year
+    some_text = "Nachricht von Handler!".replace("Handler", "Flask Applikation")
+    datum = datetime.datetime.now()
 
     countries = ["Österreich", "Deutschland", "Schweiz", "Liechtenstein"]
     return render_template("index.html",
                            some_text=some_text,
-                           aktuelles_jahr=aktuelles_jahr,
+                           datum=datum,
                            countries=countries)
 
 
